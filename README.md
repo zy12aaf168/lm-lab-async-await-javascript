@@ -21,4 +21,3 @@ or
 ## Instructions
 
 Please read the accompanying [docs](./docs/) files before making a start on these exercises
-# lm-lab-async-await-javascript
