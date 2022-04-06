@@ -1,30 +1,62 @@
 # Exercise 1
 
-## Task 1 - Calling a promise and printing the response to the console
+## Task 1 - Calling a Promise and printing the response to the console
 
-In `exercise001.js` you will find a simple function that creates a promise.
+In `exercise001.js` you will find a simple function that returns a Promise.
 
-Building on what you learnt in "JavaScript Promises & Asynchronous Programming", call the pre-written promise in `exercise001.js` using
+💡 Remember, a successful Promise calls `resolve` and a failed Promise calls `reject`.
+
+This Promise is simulating a task that fails 50% of the time, as if it's a network request being made on a very dodgy network.
+
+## Consuming the Promise
+
+Most of what we do with Promises isn't _writing_ them ourselves, so we rarely have to create a function that returns a Promise and either resolves or rejects. Most of the time we'll be _consuming_ Promises - i.e. using libraries that return Promises to us. A common example of this is `fetch`, the API for making HTTP requests.
+
+So let's practice consuming this mock Promise.
+
+👉 Building on what you learnt in "JavaScript Promises & Asynchronous Programming", call the pre-written promise in `exercise001.js` using
 `.then()` and `.catch()`
 
-If the promise is successful, log out `Yay! Promise resolved with response: `, using string interpolation to print the response to the console.
+👉 If the promise is successful, write `Yay! Promise resolved with response: ` to the console. Use string interpolation to add the actual response at the end.
 
-If the promise fails, log out `Boo. Promise rejected with response: `. Use string interpolation to print the response to the console.
+👉 If the promise fails, write `Boo. Promise rejected with response: ` to the console. Use string interpolation to add the actual response at the end.
 
-If your code works you should get console messages that say `Yay! Promise resolved with response: done` when the promise is successful and `Boo. Promise rejected with response: error` when the promise fails.
+👉 If your code works you should get console messages that say `Yay! Promise resolved with response: done` when the promise is successful and `Boo. Promise rejected with response: error` when the promise fails. Since the Promise is random you'll have to run it a few times to check you get both responses.
 
-Commit and push your code to GitHub when you've got it working, or alternatively reach out to the coaches if you get stuck or have a quesstion! 😊 🙌
+👉 Commit and push your code to GitHub when you've got it working, or alternatively reach out to the coaches if you get stuck or have a quesstion! 😊 🙌
 
 ## Task 2 - Convert your .then().catch() into Async & Await 💅
 
-Great, so you're chaining `.then()` and `.catch()` onto your promise function to log out whether your promise resolves with a success or failure.
+Great, so you're chaining `.then()` and `.catch()` onto your promise object. This allows you to handle success or failure differently - an important concept in asynchronous code.
 
-This is ok for something short and sweet, but if we have to call multiple promises this can result in something called "Promise-Callback Hell" - deeply nested Promises.
+This style of using `.then()` and `.catch()` is ok for something short and sweet, but if we have to call multiple promises this can result in something called "Promise-Callback Hell" - a confusing heap of deeply nested Promises.
 
-Task 2 is to convert your `.then()` and `.catch()` promise calls into a more sexy and modern Async / Await function. Update your `.then()` and `.catch()` to instead use `try{}` / `catch{}` to log out success or error strings.
+👉 Task 2 is to convert your `.then()` and `.catch()` promise calls into a more modern Async / Await style. Update your `.then()` and `.catch()` to instead use `async`, `await` and `try{}` and `catch{}`. The output should still be the same.
 
-Don't forget to add the `async` and `await` keywords to wait for your promise to resolve!
+❗ GO TRY IT NOW, OR READ FURTHER FOR A HINT IF YOU MUST.
 
-Have a go, if you get stuck ask one of the coaches for guidance! 😊
+❗ SERIOUSLY, IT'S GOOD TO TRY IT YOURSELF FIRST EVEN IF YOU'RE NOT SURE...
+
+💡 Hint 1: To convert a function to async, we have to mark the function itself as `async`.
+
+So you'll need a function to call:
+
+```JavaScript
+const getPromiseResponse = async () => {
+ 	/*  your function here */
+}
+getPromiseResponse();
+```
+
+💡 Hint 2: Once a function is marked async, we can use the `await` keyword before a promise. (This can happen multiple times in an async function.) For example:
+
+```JavaScript
+   /* inside async function */
+   const result = await somePromiseObject; // more commonly this might be a functionThatReturnsAPromise();
+```
+
+Hopefully that's enough to get you started if you're really stuck.
+
+Have a go, and do ask one of the coaches for guidance if you like! 😊
 
 Commit and push your code to GitHub when you've got it working and move onto [exercise002](./exercise002.md)! 😊 🙌

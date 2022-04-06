@@ -1,4 +1,4 @@
-# Exercise 2
+# Exercise 2 - More async/await practice
 
 ## Task 1 - Convert fetchData into async/await
 
