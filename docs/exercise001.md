@@ -10,7 +10,7 @@ This Promise is simulating a task that fails 50% of the time, as if it's a netwo
 
 ## Consuming the Promise
 
-Most of what we do with Promises isn't _writing_ them ourselves, so we rarely have to create a function that returns a Promise and either resolves or rejects. Most of the time we'll be _consuming_ Promises - i.e. using libraries that return Promises to us. A common example of this is `fetch`, the API for making HTTP requests.
+Most of what we do with Promises isn't _writing_ them ourselves, so we rarely have to create a function like this, which creates a Promise object and either resolves or rejects. Most of the time we'll be _consuming_ Promises - i.e. using libraries that return Promises to us. A common example of this is `fetch`, the API for making HTTP requests.
 
 So let's practice consuming this mock Promise.
 
@@ -58,5 +58,13 @@ getPromiseResponse();
 Hopefully that's enough to get you started if you're really stuck.
 
 Have a go, and do ask one of the coaches for guidance if you like! 😊
+
+## Wait...! What about "top level await?"
+
+You may have heard that it's now possible to use "top level await" - i.e. to use the `await` keyword without wrapping the code in an `async` function (like `getPromiseResponse` in our example above).
+
+This is a feature added to JavaScript in `ES2022`. It is fairly widely supported today so you can start using it. However, it's important to understand the pattern of wrapping code that `await`s in an `async` function as you'll see it a lot!
+
+## Time to move on...
 
 Commit and push your code to GitHub when you've got it working and move onto [exercise002](./exercise002.md)! 😊 🙌
