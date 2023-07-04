@@ -9,6 +9,10 @@ const promise = new Promise((resolve, reject) => {
 		// Failure
 		setTimeout(() => reject('error'), 2000);
 	}
-});
-
-// Your solution(s) to exercise001 here!
+})
+.then(response => {
+	console.log(`Yay! Promise resolved with response: ${response}`)
+})
+.catch(err => {
+	console.log(`Boo. Promise rejected with response: ${err}`);
+})
